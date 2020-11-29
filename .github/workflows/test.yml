@@ -5,17 +5,10 @@ on: [push]
 jobs:
   write-good-job:
     runs-on: ubuntu-latest
-    name: check write
     steps:
     - uses: actions/checkout@v2
       with:
         fetch-depth: 0
-    - id: hello
-      uses: dhanusaputra/some-action@v1
-      with:
-        who-to-greet: 'Mona the Octocat'
-    - name: Get the output time
-      run: echo "The time was ${{ steps.hello.outputs.time }}"
     - name: get changed files
       id: getfile
       run: |
@@ -23,3 +16,6 @@ jobs:
     - name: echo output
       run: |
         echo ${{ steps.getfile.outputs.files }}
+    - uses: dhanusaputra/some-action@v2
+      with:
+        in: steps.getfile.outputs.files
