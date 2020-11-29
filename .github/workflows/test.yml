@@ -16,6 +16,6 @@ jobs:
     - name: echo output
       run: |
         echo ${{ steps.getfile.outputs.files }}
-    - uses: dhanusaputra/some-action@v2
+    - uses: dhanusaputra/some-action@v4
       with:
-        in: steps.getfile.outputs.files
+        files: ${{ steps.getfile.outputs.files }}
