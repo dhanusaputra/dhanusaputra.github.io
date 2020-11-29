@@ -1,3 +1,5 @@
+name: 'JS Check'
+
 on: [push]
 
 jobs:
@@ -10,6 +12,7 @@ jobs:
       uses: dhanusaputra/some-action@v1
       with:
         who-to-greet: 'Mona the Octocat'
-    # Use the output from the `hello` step
+    - name: Get Changed Files
+      uses: lots0logs/gh-action-get-changed-files@2.1.4
     - name: Get the output time
       run: echo "The time was ${{ steps.hello.outputs.time }}"
