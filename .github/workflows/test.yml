@@ -8,8 +8,9 @@ jobs:
     name: check write
     steps:
     - uses: actions/checkout@v2
-    - name: Hello world action step
-      id: hello
+      with:
+        fetch-depth: 0
+    - id: hello
       uses: dhanusaputra/some-action@v1
       with:
         who-to-greet: 'Mona the Octocat'
