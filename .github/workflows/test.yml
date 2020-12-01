@@ -1,6 +1,6 @@
 name: 'Write Good Check'
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
   write-good-job:
